@@ -15,13 +15,13 @@ export default function App() {
           <Button title='Eliminar'/>
         </View>
         <View style={styles.cardProduct} >
-          <Text>Producto 1</Text>
-          <Text>$1200</Text>
+          <Text>Producto 2</Text>
+          <Text>$1300</Text>
           <Button title='Eliminar'/>
         </View>
         <View style={styles.cardProduct} >
-          <Text>Producto 1</Text>
-          <Text>$1200</Text>
+          <Text>Producto 3</Text>
+          <Text>$900</Text>
           <Button title='Eliminar'/>
         </View>
       </View>
@@ -31,7 +31,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "22",
+    marginTop: 22,
+    padding: 30,
     alignItems: 'center',
     justifyContent: 'start',
     flex: 1
@@ -41,13 +42,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignSelf: "stretch",
     justifyContent: "space-around",
-    marginTop: 35
+    marginTop: 35,
+    
   },
   input: {
     borderWidth: 4,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    width: 350
+    width: 350,
+    flex: 3
   },
   listContainer: {
     backgroundColor:"grey",
