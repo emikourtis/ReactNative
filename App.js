@@ -1,10 +1,14 @@
 
 import { useState } from 'react';
-import { Button, FlatList, Modal, StyleSheet, Text, TextInput, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import uuid from 'react-native-uuid';
+import ModalContact from './src/components/ModalContact';
+import ProductList from './src/components/ProductList';
+import ProductInputs from './src/components/ProductInputs';
+import ModalDelete from './src/components/ModalDelete';
 
 export default function App() {
-
+  const[modalDeleteVisible, setModalDeleteVisible] = useState("")
   const [newProductTitle, setNewProductTitle] = useState("")
   const [newProductPrice, setNewProductPrice] = useState("")
   const [products, setProducts] = useState([])
@@ -25,46 +29,36 @@ export default function App() {
     setProductSelected(item)
     setModalVisible(true)
   }
-  const handleDeleteProduct = () =>{
-    setProducts(current => current.filter(product=>product.id!==productSelected.id))
-    setModalVisible(false)
-  }
+  const handleDeleteProduct = (item) => {
+    console.log("Eliminando producto con ID:", item.id);
+    setProducts((current) => current.filter((product) => product.id !== item.id));
+    setModalDeleteVisible(false);
+    setProductSelected({}); // Restablecer productSelected después de la eliminación
+  };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder='product' value={newProductTitle} onChangeText={(t)=>setNewProductTitle(t)} />
-        <TextInput style={styles.input} placeholder='price' value={newProductPrice} onChangeText={(t)=>setNewProductPrice(t)}/>
-        <Button title='ADD' onPress={handleAddProduct} />
-      </View>
+    <SafeAreaView style={styles.container} >
+      <ProductInputs newProductTitle={newProductTitle}
+       setNewProductTitle={setNewProductTitle}
+        newProductPrice={newProductPrice} 
+        setNewProductPrice={setNewProductPrice} 
+        handleAddProduct={handleAddProduct} />
       <View style={styles.listContainer} >
-        <FlatList
-          data={products}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) =>
-            <View style={styles.cardProduct}>
-              <Text style={styles.cardTitle}>{item.title} </Text>
-              <Text>{item.price} $ </Text>
-              <Button title='DEL' onPress={() => handleModal(item)} />
-            </View>}
-
-        />
+        <ProductList products={products} handleModal={handleModal} handleDeleteProduct={handleDeleteProduct} />
       </View>
-      <Modal
-      visible={modalVisible}
-      >
-        <View style={styles.modalContainer}>
-          <Text style={styles.modalContent}>
-          <Text style={styles.modalText}>Eliminar el producto</Text>
-          <Text style={styles.modalText}>{productSelected.title}</Text>
-          <Button title='Confirmo' onPress={handleDeleteProduct}/>
-          <Button title='Cerrar' onPress={()=>setModalVisible(false)}/>
-          </Text>
-        </View>
+      <ModalContact 
+      productSelected={productSelected}
+      modalVisible={modalVisible} 
+      setModalVisible={setModalVisible}
 
-      </Modal>
+      />
+      <ModalDelete 
+      productSelected={productSelected}
+      modalVisible={modalVisible} 
+      handleDeleteProduct={handleDeleteProduct}
+      setModalVisible={setModalVisible}/>
 
-    </View>
+</SafeAreaView>
   );
 }
 
@@ -75,45 +69,14 @@ const styles = StyleSheet.create({
     alignItems:"center",
     marginTop:60
   },
-  inputContainer:{
-    flexDirection:"row",
-    alignItems:"center",
-    width:"95%",
-    justifyContent:"space-around"
-  },
-  input:{
-    borderWidth:3,
-    paddingHorizontal:15,
-    paddingVertical:8,
-    width:150
-  },
+ 
+  
   listContainer : {
-
-    width:"100%"
+    alignContent:"center",
+    width:"100%",
+    marginTop:30
   },
-  cardProduct:{
-
-    flexDirection:"row",
-    padding:10,
-    margin:10,
-    justifyContent:"space-around",
-    alignItems:"center",
-    borderWidth:4
-  },
-  modalContainer:{
-    flex:1,
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  modalContent:{
-    width:"80%",
-    borderWidth:2,
-    padding:10,
-    gap:10
-  },
-  modalText:{
-    textAlign:"center",
-    
-  }
+  
+ 
 });
 
