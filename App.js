@@ -8,7 +8,7 @@ import ProductInputs from './src/components/ProductInputs';
 import ModalDelete from './src/components/ModalDelete';
 
 export default function App() {
-  const[modalDeleteVisible, setModalDeleteVisible] = useState("")
+  const[modalDeleteVisible, setModalDeleteVisible] = useState(false)
   const [newProductTitle, setNewProductTitle] = useState("")
   const [newProductPrice, setNewProductPrice] = useState("")
   const [products, setProducts] = useState([])
@@ -30,10 +30,9 @@ export default function App() {
     setModalVisible(true)
   }
   const handleDeleteProduct = (item) => {
-    console.log("Eliminando producto con ID:", item.id);
     setProducts((current) => current.filter((product) => product.id !== item.id));
-    setModalDeleteVisible(false);
-    setProductSelected({}); // Restablecer productSelected después de la eliminación
+    setModalDeleteVisible(true);
+    setProductSelected({}); 
   };
 
   return (
@@ -54,9 +53,9 @@ export default function App() {
       />
       <ModalDelete 
       productSelected={productSelected}
-      modalVisible={modalVisible} 
+      modalDeleteVisible={modalDeleteVisible} 
       handleDeleteProduct={handleDeleteProduct}
-      setModalVisible={setModalVisible}/>
+      setModalDeleteVisible={setModalDeleteVisible}/>
 
 </SafeAreaView>
   );
