@@ -2,12 +2,12 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { colors } from '../Global/colors'
 import { useState } from 'react'
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons"
-import Home from '../screens/Home'
 
 
-const Search = ({ setKeyWord }) => {
 
-    const [home, setHome] = useState(false)
+const Search = ({ setKeyWord, setCategorySelected }) => {
+
+    
     const [input, setInput] = useState("")
     const [error, setError] = useState("")
 
@@ -24,10 +24,11 @@ const Search = ({ setKeyWord }) => {
         setInput("")
         setError("")
     }
-    const handleHome = () => {
-        setHome(true)
-
+    const handleHome = ()=>{
+        setCategorySelected("")
     }
+    
+  
     return (
         <View style={styles.container}>
             <View style={styles.containerInput}>
@@ -50,7 +51,7 @@ const Search = ({ setKeyWord }) => {
 
             {error ? <Text style={styles.errorInput}>{error}</Text> : null}
 
-            {home ? <Home /> : null}
+            
         </View>
     );
 };

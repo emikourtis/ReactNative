@@ -9,7 +9,7 @@ const Home = ({ setCategorySelected }) => {
     return (
         <>
             <Header title='Home' />
-            <Search />
+            <Search setCategorySelected={setCategorySelected}/>
             <Text style={styles.text} >Select a category</Text>
             <Categories style={styles.categories} setCategorySelected={setCategorySelected} />
         </>

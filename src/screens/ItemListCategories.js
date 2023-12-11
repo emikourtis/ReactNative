@@ -5,7 +5,7 @@ import allProducts from "../Data/products.json"
 import Search from '../components/Search'
 import ProductItem from '../components/ProductItem'
 
-const ItemListCategories = ({ category }) => {
+const ItemListCategories = ({ category, setCategorySelected }) => {
 
   const [keyWord, setKeyWord] = useState("")
   const [products, setProduct] = useState(allProducts)
@@ -24,7 +24,7 @@ const ItemListCategories = ({ category }) => {
   return (
     <>
       <Header />
-      <Search setKeyWord={setKeyWord} />
+      <Search setKeyWord={setKeyWord} setCategorySelected={setCategorySelected} />
       <FlatList
         style={styles.container}
         data={products}

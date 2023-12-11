@@ -4,6 +4,7 @@ import CategoryItem from './CategoryItem'
 import { colors } from '../Global/colors'
 
 const Categories = ({setCategorySelected}) => {
+  
   return (
     
       <FlatList
@@ -21,7 +22,6 @@ export default Categories
 
 const styles = StyleSheet.create({
   container: {
-
     width: "100%",
     backgroundColor:colors.pink,
     padding:20
