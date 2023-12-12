@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         borderRadius:6,
         flexDirection:"row",
         alignItems:"center",
-        justifyContent:"start",
+        justifyContent:"flex-start",
         gap:30
     },
     image:{

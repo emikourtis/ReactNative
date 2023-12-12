@@ -1,8 +1,10 @@
-import { StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet, View } from 'react-native'
 import Home from './src/screens/Home'
 import ItemListCategories from './src/screens/ItemListCategories'
 import { useState } from 'react'
 import { useFonts } from "expo-font"
+import { StatusBar } from 'expo-status-bar'
+import { colors } from './src/Global/colors'
 
 const  App = () => {
   const [categorySelected,setCategorySelected] = useState("")
@@ -16,14 +18,19 @@ const  App = () => {
 
   
   return (
-    <View style={styles.container}>
+    <>
+    <StatusBar
+      
+    />
+    <SafeAreaView style={styles.container}>
       {categorySelected ?
-        <ItemListCategories category = {categorySelected}/>
+        <ItemListCategories category={categorySelected} setCategorySelected={setCategorySelected} />
         :
         <Home setCategorySelected={setCategorySelected}/>
       }
      
-    </View>
+    </SafeAreaView>
+    </>
   )
 }
 

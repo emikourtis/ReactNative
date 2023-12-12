@@ -12,15 +12,15 @@ const Search = ({ setKeyWord, setCategorySelected }) => {
     const [error, setError] = useState("")
 
     const search = () => {
-        const expression = /.*[0-9].*/
+        const expression = /^(?=(?:\D*\d){0,2}\D*$)[A-Za-z0-9]+$/;
         if (expression.test(input)) {
-            setError("no debe contener numeros")
+            setError("Error")
         } else {
             setKeyWord(input)
         }
 
     }
-    const removeItem = () => {
+    const removeItemSearch = () => {
         setInput("")
         setError("")
     }
@@ -41,7 +41,7 @@ const Search = ({ setKeyWord, setCategorySelected }) => {
                 <Pressable onPress={search}>
                     <AntDesign name="search1" color="black" size={25} />
                 </Pressable>
-                <Pressable onPress={removeItem}>
+                <Pressable onPress={removeItemSearch}>
                     <Entypo name="circle-with-cross" color="black" size={25} />
                 </Pressable>
                 <Pressable onPress={handleHome}>

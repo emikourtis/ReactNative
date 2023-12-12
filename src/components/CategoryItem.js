@@ -20,14 +20,18 @@ export default CategoryItem
 const styles = StyleSheet.create({
     container: {
         width:"80%",
+        height:80,
         marginHorizontal:"10%",
         backgroundColor: colors.crema,
         margin: 10,
         padding: 10,
-        justifyContent:"center",
-        alignItems:"center"
+        justifyContent:"space-around",
+        alignItems:"center",
+        borderRadius:45
     },
     text:{
-        fontFamily:"Josefin"
+        fontFamily:"Josefin",
+        textTransform:"uppercase",
+        fontSize:27
     }
 })

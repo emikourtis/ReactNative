@@ -1,9 +1,10 @@
-import { FlatList, StyleSheet } from 'react-native'
+import { FlatList, Pressable, StyleSheet } from 'react-native'
 import Header from '../components/Header'
 import { useEffect, useState } from 'react'
 import allProducts from "../Data/products.json"
 import Search from '../components/Search'
 import ProductItem from '../components/ProductItem'
+
 
 const ItemListCategories = ({ category, setCategorySelected }) => {
 
@@ -20,6 +21,7 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
       setProduct(productsFiltered)
     }
   }, [keyWord])
+ 
 
   return (
     <>
@@ -41,6 +43,7 @@ export default ItemListCategories
 const styles = StyleSheet.create({
   container: {
     width: "100%",
+    flex:1
 
 
   }
