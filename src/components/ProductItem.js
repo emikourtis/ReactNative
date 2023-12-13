@@ -11,6 +11,7 @@ const ProductItem = ({item}) => {
         source={{uri:item.thumbnail}}
         />
       <Text style={styles.text} >{item.title} </Text>
+      <Text style={styles.price} >$ {item.price} </Text>
     </View>
   )
 }
@@ -37,5 +38,8 @@ const styles = StyleSheet.create({
     },
     text:{
         fontFamily:"Josefin"
+    },
+    price:{
+        fontSize:17
     }
 })

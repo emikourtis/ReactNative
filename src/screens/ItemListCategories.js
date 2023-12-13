@@ -25,7 +25,7 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
 
   return (
     <>
-      <Header />
+      <Header category={category} />
       <Search setKeyWord={setKeyWord} setCategorySelected={setCategorySelected} />
       <FlatList
         style={styles.container}
