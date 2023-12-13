@@ -23,7 +23,7 @@ export default Header
 const styles = StyleSheet.create({
   container: {
     backgroundColor:colors.orange,
-    height: 80,
+    height: 130,
     width:"100%",
     paddingTop:20,
     justifyContent: "space-between",
@@ -31,9 +31,11 @@ const styles = StyleSheet.create({
     flexDirection:"row"
   },
   text: {
-    fontSize: 50,
+    fontSize: 45,
     fontFamily:"Josefin",
-    margin:30
+    margin:30,
+    fontWeight:"bold",
+    textTransform:"uppercase"
   },
   btn:{
     margin:30
