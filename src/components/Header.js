@@ -1,10 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../Global/colors'
+import { Entypo } from "@expo/vector-icons"
 
 const Header = ({title = "Product"}) => {
+
+  const handleLogin = ()=>{
+    
+  }
+
   return (
     <View style={styles.container} >
       <Text style={styles.text} >{title}</Text>
+      <Pressable style={styles.btn} onPress={handleLogin} >
+        <Entypo name="login" color="black" size={25} />
+      </Pressable>
     </View>
   )
 }
@@ -17,12 +26,16 @@ const styles = StyleSheet.create({
     height: 80,
     width:"100%",
     paddingTop:20,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection:"row"
   },
   text: {
-    fontSize: 30,
+    fontSize: 50,
     fontFamily:"Josefin",
-    
+    margin:30
+  },
+  btn:{
+    margin:30
   }
 })
