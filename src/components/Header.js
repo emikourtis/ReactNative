@@ -2,16 +2,12 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../Global/colors'
 import { Entypo } from "@expo/vector-icons"
 
-const Header = ({category}) => {
-
-  const handleLogin = ()=>{
-
-  }
+const Header = ({title, navigation, route}) => {
 
   return (
     <View style={styles.container} >
-      <Text style={styles.text} >{category? category : "Home"}</Text>
-      <Pressable style={styles.btn} onPress={handleLogin} >
+      <Text style={styles.text} >{title} </Text>
+      <Pressable style={styles.btn} onPress={()=>navigation.navigate("Login")} >
         <Entypo name="login" color="black" size={25} />
       </Pressable>
     </View>

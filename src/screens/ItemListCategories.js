@@ -6,7 +6,9 @@ import Search from '../components/Search'
 import ProductItem from '../components/ProductItem'
 
 
-const ItemListCategories = ({ category, setCategorySelected }) => {
+const ItemListCategories = ({ navigation, route }) => {
+   
+  const {category} = route.params
 
   const [keyWord, setKeyWord] = useState("")
   const [products, setProduct] = useState(allProducts)
@@ -25,13 +27,13 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
 
   return (
     <>
-      <Header category={category} />
-      <Search setKeyWord={setKeyWord} setCategorySelected={setCategorySelected} />
+      
+      <Search setKeyWord={setKeyWord}  />
       <FlatList
         style={styles.container}
         data={products}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <ProductItem item={item} />}
+        renderItem={({ item }) => <ProductItem item={item} navigation={navigation} route={route} />}
       />
 
     </>

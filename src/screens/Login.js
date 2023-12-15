@@ -1,5 +1,4 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React from 'react'
 import { colors } from '../Global/colors'
 
 const Login = () => {

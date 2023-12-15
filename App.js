@@ -1,13 +1,11 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native'
-import Home from './src/screens/Home'
-import ItemListCategories from './src/screens/ItemListCategories'
-import { useState } from 'react'
+import { StyleSheet } from 'react-native'
 import { useFonts } from "expo-font"
 import { StatusBar } from 'expo-status-bar'
-import { colors } from './src/Global/colors'
+import Navigator from './src/navigation/Navigator'
+
 
 const  App = () => {
-  const [categorySelected,setCategorySelected] = useState("")
+  
   
   const [fontLoaded] = useFonts({
     Josefin:require("./assets/Fonts/JosefinSans-Bold.ttf"),
@@ -20,16 +18,11 @@ const  App = () => {
   return (
     <>
     <StatusBar
+      />
       
+    <Navigator
+    
     />
-    <SafeAreaView style={styles.container}>
-      {categorySelected ?
-        <ItemListCategories category={categorySelected} setCategorySelected={setCategorySelected} />
-        :
-        <Home setCategorySelected={setCategorySelected}/>
-      }
-     
-    </SafeAreaView>
     </>
   )
 }

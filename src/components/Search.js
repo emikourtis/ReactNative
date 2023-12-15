@@ -5,7 +5,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons"
 
 
 
-const Search = ({ setKeyWord, setCategorySelected }) => {
+const Search = ({ setKeyWord, navigation, route }) => {
     const [input, setInput] = useState("");
     const [error, setError] = useState("");
   
@@ -24,9 +24,6 @@ const Search = ({ setKeyWord, setCategorySelected }) => {
       setError("");
     };
   
-    const handleHome = () => {
-      setCategorySelected("");
-    };
   
     return (
       <View style={styles.container}>
@@ -43,7 +40,7 @@ const Search = ({ setKeyWord, setCategorySelected }) => {
           <Pressable onPress={removeItemSearch}>
             <Entypo name="circle-with-cross" color="black" size={25} />
           </Pressable>
-          <Pressable onPress={handleHome}>
+          <Pressable onPress={()=>navigation.navigate("Home")}>
             <Ionicons name="md-home" size={24} color="black" />
           </Pressable>
           {error ? <Text style={styles.errorInput}>{error}</Text> : null}
