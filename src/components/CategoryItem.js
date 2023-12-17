@@ -6,7 +6,7 @@ import CardShadow from '../Wrappers/CardShadow'
 const CategoryItem = ({category, navigation, route}) => {
   return (
     
-      <Pressable onPress={()=>navigation.navigate("Categories", {category})}>
+      <Pressable navigation={navigation} route={route} onPress={()=>navigation.navigate("Categories", {category})}>
         <CardShadow style={styles.container}>
             <Text style={styles.text}>{category} </Text>
         </CardShadow>
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     text:{
         fontFamily:"Josefin",
         textTransform:"uppercase",
-        fontSize:27
+        fontSize:20
     }
 })

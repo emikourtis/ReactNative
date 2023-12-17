@@ -18,10 +18,13 @@ const Navigator = () => {
         screenOptions={
             ({route})=>{
                 return {
-                    header : () => <Header title={
+                    header : () => <Header
+                                            title={
                                         route.name === "Home" ? "Categories" :
                                         route.name === "Categories" ? route.params.category :
+                                        route.name === "Login" ? "Login" :
                                         "Detail"
+                                        
                     }               />
                 }
             }

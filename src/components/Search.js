@@ -1,8 +1,8 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { colors } from '../Global/colors'
 import { useState } from 'react'
-import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons"
-
+import { AntDesign, Entypo } from "@expo/vector-icons"
+import BtnHome from './BtnHome';
 
 
 const Search = ({ setKeyWord, navigation, route }) => {
@@ -34,17 +34,16 @@ const Search = ({ setKeyWord, navigation, route }) => {
             value={input}
             onChangeText={(t) => setInput(t)}
           />
-          <Pressable onPress={search}>
+          <TouchableOpacity onPress={search}>
             <AntDesign name="search1" color="black" size={25} />
-          </Pressable>
-          <Pressable onPress={removeItemSearch}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={removeItemSearch}>
             <Entypo name="circle-with-cross" color="black" size={25} />
-          </Pressable>
-          <Pressable onPress={()=>navigation.navigate("Home")}>
-            <Ionicons name="md-home" size={24} color="black" />
-          </Pressable>
-          {error ? <Text style={styles.errorInput}>{error}</Text> : null}
+          </TouchableOpacity>
+          <BtnHome navigation={navigation} route={route}/>
+          
         </View>
+        {error ? <Text style={styles.errorInput}>{error}</Text> : null}
       </View>
     );
   };
@@ -63,7 +62,7 @@ const Search = ({ setKeyWord, navigation, route }) => {
       gap: 10,
       alignContent: "center",
       alignItems: "center",
-      paddingHorizontal: 10, // Añadido para mejorar la presentación
+      paddingHorizontal: 10, 
     },
     input: {
       backgroundColor: colors.crema,

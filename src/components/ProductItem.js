@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../Global/colors'
 
 
@@ -10,8 +10,10 @@ const ProductItem = ({item, navigation, route}) => {
         resizeMode="cover"
         source={{uri:item.thumbnail}}
         />
+        <View style={styles.textContainer} >
       <Text style={styles.text} >{item.title} </Text>
       <Text style={styles.price} >$ {item.price} </Text>
+      </View>
     </Pressable>
   )
 }
@@ -33,13 +35,18 @@ const styles = StyleSheet.create({
         gap:30
     },
     image:{
-        width:50,
-        height:50
+        width:120,
+        height:120
     },
     text:{
-        fontFamily:"Josefin"
+        fontFamily:"Josefin",
+        width:"80%"
     },
     price:{
-        fontSize:17
+        fontSize:28,
+        color:colors.blue
+    },
+    textContainer:{
+      width:"60%"
     }
 })

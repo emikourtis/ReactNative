@@ -1,15 +1,15 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors } from '../Global/colors'
 import { Entypo } from "@expo/vector-icons"
+import BtnHome from './BtnHome'
+
 
 const Header = ({title, navigation, route}) => {
 
   return (
     <View style={styles.container} >
       <Text style={styles.text} >{title} </Text>
-      <Pressable style={styles.btn} onPress={()=>navigation.navigate("Login")} >
-        <Entypo name="login" color="black" size={25} />
-      </Pressable>
+     
     </View>
   )
 }

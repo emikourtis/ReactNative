@@ -28,7 +28,7 @@ const ItemListCategories = ({ navigation, route }) => {
   return (
     <>
       
-      <Search setKeyWord={setKeyWord}  />
+      <Search setKeyWord={setKeyWord} navigation={navigation} route={route} />
       <FlatList
         style={styles.container}
         data={products}

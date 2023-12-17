@@ -8,6 +8,7 @@ const Categories = ({navigation, route}) => {
   return (
     
       <FlatList
+      navigation={navigation} route={route}
         style={styles.container}
         data={categories}
         keyExtractor={item => item}
