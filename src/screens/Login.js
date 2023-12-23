@@ -5,7 +5,7 @@ const Login = ({ navigation, route }) => {
   return (
     <View style={styles.container} >
       <View style={styles.Form} >
-        <Text style={styles.title}>Login</Text>
+        
         <TextInput style={styles.input} placeholder='User' />
         <TextInput style={styles.input} placeholder='Password' />
         <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Home")}>
@@ -55,10 +55,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center"
-  },
-  title:{
-    fontFamily:"Josefin",
-    fontSize:20
   },
   btnText:{
     fontFamily:"Josefin",

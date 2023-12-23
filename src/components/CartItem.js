@@ -1,0 +1,45 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import {AntDesign} from '@expo/vector-icons'
+import { colors } from '../Global/colors'
+const CartItem = ({ item }) => {
+    return (
+        <View style={styles.container} >
+            <View style={styles.textContainer}>
+                <Text style={styles.text1}>{item.title} </Text>
+                <Text style={styles.text2}>{item.brand} </Text>
+                <Text style={styles.text1}>$ {item.price} </Text>
+            </View>
+            <AntDesign name='delete' size={25} color={"black"}/>
+        </View>
+    )
+}
+
+export default CartItem
+
+const styles = StyleSheet.create({
+    container:{
+        backgroundColor:colors.crema,
+        margin:10,
+        padding:10,
+        height:90,
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+        borderRadius:10,
+        borderWidth:2
+    },
+    textContainer:{
+        width:"90%",
+        gap:2
+    },
+    text1:{
+        fontSize:17,
+        fontFamily:"Josefin"
+    },
+    text2:{
+        fontSize:14,
+        fontFamily:"Josefin"
+    }
+
+})

@@ -1,0 +1,41 @@
+[
+    {
+        "id": 93,
+        "title": "Automatic Motor Gas Motorcycles",
+        "description": "150cc 4-Stroke Motorcycle Automatic Motor Gas Motorcycles Scooter motorcycles 150cc scooter",
+        "price": 1050,
+        "discountPercentage": 3.34,
+        "rating": 4.84,
+        "stock": 127,
+        "brand": "shock absorber",
+        "category": "motorcycle",
+        "thumbnail": "https://i.dummyjson.com/data/products/93/thumbnail.jpg",
+        "images": [
+          "https://i.dummyjson.com/data/products/93/1.jpg",
+          "https://i.dummyjson.com/data/products/93/2.jpg",
+          "https://i.dummyjson.com/data/products/93/3.jpg",
+          "https://i.dummyjson.com/data/products/93/4.jpg",
+          "https://i.dummyjson.com/data/products/93/thumbnail.jpg"
+        ],
+        "quantity":2
+      },
+      {
+        "id": 94,
+        "title": "new arrivals Fashion motocross goggles",
+        "description": "new arrivals Fashion motocross goggles motorcycle motocross racing motorcycle",
+        "price": 900,
+        "discountPercentage": 3.85,
+        "rating": 4.06,
+        "stock": 109,
+        "brand": "JIEPOLLY",
+        "category": "motorcycle",
+        "thumbnail": "https://i.dummyjson.com/data/products/94/thumbnail.webp",
+        "images": [
+          "https://i.dummyjson.com/data/products/94/1.webp",
+          "https://i.dummyjson.com/data/products/94/2.jpg",
+          "https://i.dummyjson.com/data/products/94/3.jpg",
+          "https://i.dummyjson.com/data/products/94/thumbnail.webp"
+        ],
+        "quantity":1
+      }
+]

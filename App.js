@@ -1,28 +1,28 @@
 import { StyleSheet } from 'react-native'
 import { useFonts } from "expo-font"
 import { StatusBar } from 'expo-status-bar'
-import Navigator from './src/navigation/Navigator'
+import TabNavigator from './src/navigation/TabNavigator'
 
 
-const  App = () => {
-  
-  
+const App = () => {
+
+
   const [fontLoaded] = useFonts({
-    Josefin:require("./assets/Fonts/JosefinSans-Bold.ttf"),
-    Lobster:require("./assets/Fonts/Lobster-Regular.ttf")
+    Josefin: require("./assets/Fonts/JosefinSans-Bold.ttf"),
+    Lobster: require("./assets/Fonts/Lobster-Regular.ttf")
   })
 
-  if(!fontLoaded) return null
+  if (!fontLoaded) return null
 
-  
+
   return (
     <>
-    <StatusBar
+      <StatusBar
       />
-      
-    <Navigator
-    
-    />
+
+      <TabNavigator
+
+      />
     </>
   )
 }
