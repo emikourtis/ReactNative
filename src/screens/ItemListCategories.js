@@ -1,28 +1,22 @@
-import { FlatList, Pressable, StyleSheet } from 'react-native'
-import Header from '../components/Header'
+import { FlatList, StyleSheet } from 'react-native'
 import { useEffect, useState } from 'react'
-import allProducts from "../Data/products.json"
 import Search from '../components/Search'
 import ProductItem from '../components/ProductItem'
-
+import { useSelector } from 'react-redux'
 
 const ItemListCategories = ({ navigation, route }) => {
-   
-  const {category} = route.params
+   const productsFilteredByCategory = useSelector(state => state.shop.value.productsFilteredByCategory)
 
   const [keyWord, setKeyWord] = useState("")
-  const [products, setProduct] = useState(allProducts)
+  const [products, setProduct] = useState(productsFilteredByCategory)
 
   useEffect(() => {
-    if (category) {
-      const productsCategory = allProducts.filter(product => product.category === category)
-      const productsFiltered = productsCategory.filter(product => product.title.includes(keyWord))
+    
+      const productsFiltered = productsFilteredByCategory.filter(product => product.title.includes(keyWord))
       setProduct(productsFiltered)
-    } else {
-      const productsFiltered = allProducts.filter(product => product.title.includes(keyWord))
-      setProduct(productsFiltered)
-    }
-  }, [keyWord])
+    
+    
+  }, [keyWord, productsFilteredByCategory])
  
 
   return (
