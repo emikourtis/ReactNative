@@ -19,7 +19,7 @@ export default Header
 const styles = StyleSheet.create({
   container: {
     backgroundColor:colors.orange,
-    height: 130,
+    height: 110,
     width:"100%",
     paddingTop:20,
     justifyContent: "space-between",
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flexDirection:"row"
   },
   text: {
-    fontSize: 45,
+    fontSize: 37,
     fontFamily:"Josefin",
     margin:30,
     fontWeight:"bold",

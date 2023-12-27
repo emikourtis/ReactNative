@@ -28,5 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor:colors.pink,
     padding:20,
     alignContent:"center",
+    paddingBottom:20
     }
 })

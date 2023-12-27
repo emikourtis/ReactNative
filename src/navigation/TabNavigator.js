@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         left: 20,
         right: 20,
         borderRadius: 15,
-        height: 90
+        height: 90,
+        opacity:0.8
     }
 })
