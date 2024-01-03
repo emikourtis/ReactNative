@@ -1,7 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { colors } from '../Global/colors'
-import { Entypo } from "@expo/vector-icons"
-import BtnHome from './BtnHome'
 
 
 const Header = ({title, navigation, route}) => {
