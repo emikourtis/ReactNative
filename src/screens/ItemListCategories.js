@@ -2,18 +2,23 @@ import { FlatList, StyleSheet } from 'react-native'
 import { useEffect, useState } from 'react'
 import Search from '../components/Search'
 import ProductItem from '../components/ProductItem'
-import { useSelector } from 'react-redux'
+import { useGetProductsQuery } from '../app/services/shopServices'
 
 const ItemListCategories = ({ navigation, route }) => {
-   const productsFilteredByCategory = useSelector(state => state.shop.value.productsFilteredByCategory)
-
+  const {category} = route.params
+   const {data,isLoading} = useGetProductsQuery(category)
   const [keyWord, setKeyWord] = useState("")
-  const [products, setProduct] = useState(productsFilteredByCategory)
+  const [products, setProducts] = useState()
+
+  
 
   useEffect(() => {
-    
-      const productsFiltered = productsFilteredByCategory.filter(product => product.title.includes(keyWord))
-      setProduct(productsFiltered)
+    if (!isLoading) {
+      const dataArray = Object.values(data)
+      const productsFiltered = dataArray.filter(product => product.title.includes(keyWord))
+      setProducts(productsFiltered)
+      
+      }
     
     
   }, [keyWord, productsFilteredByCategory])
