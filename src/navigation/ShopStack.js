@@ -20,9 +20,7 @@ const ShopStack = () => {
                       header : () => <Header
                                               title={
                                           route.name === "Home" ? "Categories" :
-                                          route.name === "Categories" ? route.params.category :
-                                          route.name === "Login" ? "Login" :
-                                          "Detail"
+                                          route.name === "Categories" ? route.params.category : "Detail"
                                           
                       }               />
                   }
@@ -32,7 +30,7 @@ const ShopStack = () => {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Categories" component={ItemListCategories} />
           <Stack.Screen name="Product" component={ItemDetail} />
-          <Stack.Screen name="Login" component={Login} />
+          
         </Stack.Navigator>
      
     )

@@ -1,37 +1,39 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-import BtnHome from '../components/BtnHome'
+import { StyleSheet, Text, View , Image, Pressable } from 'react-native'
 import { colors } from '../Global/colors'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/cart/cartSlice'
 
-
-const ItemDetail = ({ navigation, route }) => {
-
-  const product = useSelector((state) => state.shop.value.productSelected)
+const ItemDetail = ({route}) => {
+  const dispatch = useDispatch()
+  const product = useSelector((state)=> state.shop.value.productSelected)
   const images = product.images ? product.images : []
 
+  const handleAgregarAlCarrito = () => {
+    console.log('Intento de agregar al carrito:', product);
+    dispatch(addItem(product));
+    console.log('Estado actual del carrito:', useSelector(state => state.cart));
+  };
 
   return (
-    <View style={styles.container} >
-      <View style={styles.Content}>
-        <Image
-          style={styles.image}
-          source={{ uri: images[1] }}
-          resizeMode='cover'
-        />
-        <View style={styles.containerText}>
-          <Text style={styles.title}>{product.title}</Text>
-          <Text style={styles.description}>{product.description}</Text>
+    <View style={styles.container}>
+      <View style={styles.content} >
+          <Image
+            style={styles.image}
+            source={{uri:images[0]}}
+            resizeMode='cover'
+          />
+          <View style={styles.containerText}>
+            <Text style={styles.title}>{product.title}</Text>
+            <Text>{product.description}</Text>
+          </View>
+          <View style={styles.containerPrice}>
+            <Text style={styles.price}>$ {product.price}</Text>
+            <Pressable style={styles.buyNow} onPress={handleAgregarAlCarrito}>
+              <Text style={styles.buyNowText}>Carrito</Text>
+            </Pressable>
+          </View>
         </View>
-        <View style={styles.containerPrice}>
-          <Text style={styles.price}>$ {product.price}</Text>
-          <Pressable style={styles.buyNow} onPress={() => navigation.navigate("Login")}>
-            <Text style={styles.buyNowText}>Buy Now</Text>
-          </Pressable>
-          <BtnHome navigation={navigation} route={route} />
-        </View>
-
-      </View>
-
     </View>
   )
 }
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     paddingBottom: 120
 
   },
-  Content: {
+  content: {
     width: "100%"
   },
 
@@ -60,7 +62,8 @@ const styles = StyleSheet.create({
   containerText: {
     gap: 25,
     paddingHorizontal: 5,
-    paddingVertical: 5
+    paddingVertical: 5,
+    marginLeft:19
   },
   containerPrice: {
     width: "100%",

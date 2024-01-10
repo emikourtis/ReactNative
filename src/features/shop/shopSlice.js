@@ -15,11 +15,11 @@ const initialState = {
         name:"Shop",
         initialState,
         reducers:{
-            setProductsFilteredByCategory: (state, actions)=>{
-                state.value.productsFilteredByCategory = state.value.products.filter(products=>products.category==actions.payload)
+            setProductsFilteredByCategory: (state, action)=>{
+                state.value.productsFilteredByCategory = state.value.products.filter(products=>products.category==action.payload)
             },
-            setProductSelected: (state,actions)=>{
-                state.value.productSelected = state.value.products.find(product =>product.id===actions.payload)
+            setProductSelected: (state,action)=>{
+                state.value.productSelected = state.value.products.find(product =>product.id===action.payload)
             }
         }
     })

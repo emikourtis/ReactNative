@@ -4,7 +4,6 @@ import CartStack from './CartStack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 import { colors } from '../Global/colors';
-import { FontAwesome, Fontisto, Octicons } from '@expo/vector-icons'
 import OrdersStack from './OrdersStack';
 import ShopIcon from '../components/ShopIcon';
 import CartIcon from '../components/CartIcon';

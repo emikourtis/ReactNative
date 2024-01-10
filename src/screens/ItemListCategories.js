@@ -21,7 +21,7 @@ const ItemListCategories = ({ navigation, route }) => {
       }
     
     
-  }, [keyWord, productsFilteredByCategory])
+  }, [keyWord, data])
  
 
   return (
