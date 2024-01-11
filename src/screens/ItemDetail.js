@@ -9,18 +9,14 @@ const ItemDetail = ({route}) => {
   const product = useSelector((state)=> state.shop.value.productSelected)
   const images = product.images ? product.images : []
 
-  const handleAgregarAlCarrito = () => {
-    console.log('Intento de agregar al carrito:', product);
-    dispatch(addItem(product));
-    console.log('Estado actual del carrito:', useSelector(state => state.cart));
-  };
+
 
   return (
     <View style={styles.container}>
       <View style={styles.content} >
           <Image
             style={styles.image}
-            source={{uri:images[0]}}
+            source={{uri:images[2]}}
             resizeMode='cover'
           />
           <View style={styles.containerText}>
@@ -29,7 +25,7 @@ const ItemDetail = ({route}) => {
           </View>
           <View style={styles.containerPrice}>
             <Text style={styles.price}>$ {product.price}</Text>
-            <Pressable style={styles.buyNow} onPress={handleAgregarAlCarrito}>
+            <Pressable style={styles.buyNow} onPress={()=>dispatch(addItem(product))}>
               <Text style={styles.buyNowText}>Carrito</Text>
             </Pressable>
           </View>

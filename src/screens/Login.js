@@ -1,63 +1,88 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import {useState ,useEffect} from 'react'
+import { View, Text ,StyleSheet, Pressable} from 'react-native'
 import { colors } from '../Global/colors'
+import SubmitButton from '../components/SubmitButton'
+import { useLoginMutation } from '../app/services/auth'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../features/auth/authSlice'
+import InputForm from '../components/InputForm'
 
-const Login = ({ navigation, route }) => {
+
+const Login = ({navigation}) => {
+  const dispatch = useDispatch()
+  const [triggerLogin,{data,isError,isSuccess,error,isLoading}] = useLoginMutation()
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+
+  useEffect(()=>{
+    if(isSuccess) dispatch(setUser(data))
+    if(isError) console.log(error)
+  },[data,isError,isSuccess])
+
+
+  const onSubmit = () => {
+    triggerLogin({email,password})
+  }
   return (
-    <View style={styles.container} >
-      <View style={styles.Form} >
-        
-        <TextInput style={styles.input} placeholder='User' />
-        <TextInput style={styles.input} placeholder='Password' />
-        <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Home")}>
-          <Text style={styles.btnText}>Login</Text>
-        </TouchableOpacity>
+    <View style={styles.main}>
+      <View style={styles.container}>
+          <Text style={styles.title} >Login to start</Text>
+          <InputForm
+            label="Email"
+            value={email}
+            onChangeText={(t) => setEmail(t)}
+            isSecure = {false}
+            error=""
+          />
+          <InputForm
+            label="Password"
+            value={password}
+            onChangeText={(t) => setPassword(t)}
+            isSecure={true}
+            error=""
+          />
+          <SubmitButton onPress={onSubmit} title="Send"/>
+          <Text style={styles.sub}>Not have an account?</Text>
+          <Pressable onPress={()=> navigation.navigate("Signup")} >
+              <Text style={styles.subLink}>Sign up</Text>
+          </Pressable>
       </View>
-
     </View>
   )
 }
 
+
 export default Login
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 20,
-    backgroundColor: colors.blue,
-    opacity:0.9
-  },
-  input: {
-    borderWidth: 1,
-    width: "80%",
-    borderRadius: 10,
-    paddingLeft: 15,
-    paddingVertical: 10,
-    margin: 10,
-    fontFamily:"Josefin"
-  },
-  Form: {
-    width: "90%",
-    paddingVertical: 20,
-    borderWidth: 3,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius:10,
-    
-  },
-  btn: {
-    width: "80%",
-    borderWidth: 1,
-    backgroundColor: colors.blue,
-    padding: 10,
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  btnText:{
-    fontFamily:"Josefin",
-    fontSize:20
-  }
+    main:{
+      flex:1,
+      justifyContent:"center",
+      alignItems:"center"
+    },
+    container:{
+      width:"90%",
+      backgroundColor:colors.blue,
+      gap:15,
+      borderRadius:10,
+      justifyContent:"center",
+      alignItems:"center",
+      paddingVertical:20
+    },
+    title:{
+      fontSize:22,
+      fontFamily:"Lobster",
+      color:"white"
+    },
+    sub:{
+      fontSize:14,
+      fontFamily:"Josefin",
+      color:"white"
+    },
+    subLink:{
+      fontSize:14,
+      fontFamily:"Josefin",
+      color:"blue"
+    }
 })

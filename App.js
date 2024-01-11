@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
 import { useFonts } from "expo-font"
 import { StatusBar } from 'expo-status-bar'
-import TabNavigator from './src/navigation/TabNavigator'
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
+import MainNavigator from './src/navigation/MainNavigator'
 
 const App = () => {
 
@@ -21,7 +21,7 @@ const App = () => {
       <StatusBar
       />
       <Provider store={store}>
-        <TabNavigator />
+        <MainNavigator />
       </Provider>
     </>
   )

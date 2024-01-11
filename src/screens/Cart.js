@@ -1,22 +1,23 @@
-import React from 'react';
 import { StyleSheet, Text, View, FlatList, Pressable } from 'react-native';
 import CartItem from '../components/CartItem';
 import { useSelector } from 'react-redux';
 import { usePostOrdersMutation } from '../app/services/shopServices';
 
+
 const Cart = () => {
   const cart = useSelector(state => state.cart);
+  const [triggerPostOrder] = usePostOrdersMutation()
 
   if (!cart || !cart.value || !cart.value.items || cart.value.total === null) {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>El carrito está vacío o los datos son inválidos.</Text>
+        <Text style={styles.text}>El carrito está vacío</Text>
       </View>
     );
   }
 
   const { value: { items, total } } = cart;
-  const [triggerPostOrder] = usePostOrdersMutation();
+  
 
   return (
     <View style={styles.container}>
@@ -26,7 +27,7 @@ const Cart = () => {
         renderItem={({ item }) => <CartItem item={item} />}
       />
       <View style={styles.confirmContainer}>
-        <Pressable onPress={() => triggerPostOrder(cart.value)}>
+        <Pressable onPress={() => triggerPostOrder(cart)}>
           <Text style={styles.text}>Confirmar</Text>
         </Pressable>
         <Text style={styles.text}>Total: $ {total} </Text>

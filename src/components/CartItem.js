@@ -2,13 +2,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {AntDesign} from '@expo/vector-icons'
 import { colors } from '../Global/colors'
+
+
 const CartItem = ({ item }) => {
     return (
         <View style={styles.container} >
             <View style={styles.textContainer}>
                 <Text style={styles.text1}>{item.title} </Text>
                 <Text style={styles.text2}>{item.brand} </Text>
-                <Text style={styles.text1}>$ {item.price} </Text>
+                <Text style={styles.text1}>$ {item.price} Cantidad: {item.quantity} </Text>
             </View>
             <AntDesign name='delete' size={25} color={"black"}/>
         </View>
