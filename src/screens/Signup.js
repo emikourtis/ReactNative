@@ -1,12 +1,12 @@
 import {useEffect, useState } from 'react'
 import { View, Text ,StyleSheet, Pressable} from 'react-native'
-import InputForm from '../components/InputForm'
 import SubmitButton from '../components/SubmitButton'
 import { colors } from '../Global/colors'
 import { useSignupMutation } from '../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { signupSchema } from '../validations/signupSchema'
+import InputForm from '../components/InputForm'
 
 const Signup = ({navigation}) => {
   const dispatch = useDispatch()

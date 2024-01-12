@@ -7,41 +7,48 @@ import OrdersStack from './OrdersStack';
 import ShopIcon from '../components/ShopIcon';
 import CartIcon from '../components/CartIcon';
 import OrderIcon from '../components/OrdersIcon';
+import ProfileStack from './ProfileStack';
+import ProfileIcon from '../components/ProfileIcon';
 
 const Tab = createBottomTabNavigator();
 
 
 const TabNavigator = () => {
     return (
-        
-            <Tab.Navigator
-                screenOptions={{
-                    headerShown: false,
-                    tabBarShowLabel: false,
-                    tabBarStyle: styles.tabBar
+
+        <Tab.Navigator
+            screenOptions={{
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: styles.tabBar
+            }}
+        >
+            <Tab.Screen
+                name="ShopStack"
+                component={ShopStack}
+                options={{
+                    tabBarIcon: () => <ShopIcon />
                 }}
-            >
-                <Tab.Screen
-                    name="ShopStack"
-                    component={ShopStack}
-                    options={{
-                        tabBarIcon: () => <ShopIcon />
-                    }}
-                />
+            />
 
 
-                <Tab.Screen name="CartStack" component={CartStack}
-                    options={{
-                        tabBarIcon: () => <CartIcon/>
+            <Tab.Screen name="CartStack" component={CartStack}
+                options={{
+                    tabBarIcon: () => <CartIcon />
                 }}
-                />
-                <Tab.Screen name="OrdersStack" component={OrdersStack}
-                    options={{
-                        tabBarIcon: () => <OrderIcon/>
+            />
+            <Tab.Screen name="OrdersStack" component={OrdersStack}
+                options={{
+                    tabBarIcon: () => <OrderIcon />
                 }}
-                />
-            </Tab.Navigator>
-        
+            />
+            <Tab.Screen name="ProfileStack" component={ProfileStack}
+                options={{
+                    tabBarIcon: () => <ProfileIcon />
+                }}
+            />
+        </Tab.Navigator>
+
     )
 }
 
@@ -59,6 +66,6 @@ const styles = StyleSheet.create({
         right: 20,
         borderRadius: 15,
         height: 90,
-        opacity:0.8
+        opacity: 0.8
     }
 })
