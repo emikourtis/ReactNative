@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { Octicons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 const ProfileIcon = () => {
   return (
     <View style={styles.container} >
-       <Octicons name='list-unordered'
+       <MaterialCommunityIcons name='face-man-profile'
                             size={40}
                             color={"black"}/>
       <Text style={styles.text} >Profile</Text>
