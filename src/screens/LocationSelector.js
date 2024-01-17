@@ -4,7 +4,7 @@ import AddButton from '../components/AddButton'
 import * as Location from 'expo-location'
 
 const LocationSelector = () => {
-    const location = useState({latitude:"", longitude:""})
+    const [location, setLocation] = useState({latitude:"", longitude:""})
     const [errorMsg, setErrorMsg] = useState(null)
 
     useEffect(() => {
@@ -15,6 +15,7 @@ const LocationSelector = () => {
                 return
             }
             let location = await Location.getCurrentPositionAsync({})
+            setLocation({latitude:location.coords.latitude, longitude:location.coords.longitude})
         })()
       
     }, [])
