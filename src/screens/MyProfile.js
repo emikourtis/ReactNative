@@ -15,6 +15,7 @@ const MyProfile = ({navigation}) => {
             resizeMode='cover'
         />
         <AddButton title={"Add profile picture"} onPress={()=> navigation.navigate("ImageSelector")}/>
+        <AddButton title={"Add ubication"} onPress={()=> navigation.navigate("LocationSelector")}/>
     </View>
   )
 }

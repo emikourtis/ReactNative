@@ -35,7 +35,15 @@ export const shopApi = createApi({
       query: (localId) => `profileImage/${localId}.json`,
       providesTags:["image"]
     }),
+    postUserLocation: builder.mutation({
+      query: ({localId,locationFormatted}) => ({
+        url:`userLocation/${localId}.json`,
+        method:"PUT",
+        body:locationFormatted
+      }),
+      invalidatesTags:["image"]
+    }),
   }),
 })
 
-export const { useGetProductsQuery,useGetProductQuery,useGetCategoriesQuery, usePostOrdersMutation, usePostProfileImageMutation,useGetProfileImageQuery} = shopApi
+export const { useGetProductsQuery,useGetProductQuery,useGetCategoriesQuery, usePostOrdersMutation, usePostProfileImageMutation,useGetProfileImageQuery, usePostUserLocationMutation} = shopApi
