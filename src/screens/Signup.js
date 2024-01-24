@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { signupSchema } from '../validations/signupSchema'
 import InputForm from '../components/InputForm'
+import { insertSession } from '../database'
 
 const Signup = ({navigation}) => {
   const dispatch = useDispatch()
@@ -19,10 +20,16 @@ const Signup = ({navigation}) => {
   const [confirmpasswordError, setConfirmPasswordError] = useState("")
 
 
-  useEffect(()=>{
-    if(isSuccess) dispatch(setUser(data))
-    if(isError) console.log(error)
-  },[data,isError,isSuccess])
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(setUser(data))
+      insertSession(data)
+        .then((result)=>console.log(result))
+        .catch((err)=>console.log(err))
+    }
+    if (isError) console.log(error)
+  }, [data, isError, isSuccess])
+
 
 
   const onSubmit = () => {

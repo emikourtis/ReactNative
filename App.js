@@ -4,6 +4,11 @@ import { StatusBar } from 'expo-status-bar'
 import { store } from './src/app/store'
 import { Provider } from 'react-redux'
 import MainNavigator from './src/navigation/MainNavigator'
+import { init } from './src/database'
+
+init()
+  .then(()=>console.log("db init"))
+  .catch(err=>console.log(err))
 
 const App = () => {
 

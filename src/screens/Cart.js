@@ -5,6 +5,7 @@ import { usePostOrdersMutation } from '../app/services/shopServices';
 
 
 const Cart = () => {
+  const localId = useSelector(state=>state.auth.value.localId)
   const cart = useSelector(state => state.cart);
   const [triggerPostOrder] = usePostOrdersMutation()
 
@@ -27,7 +28,7 @@ const Cart = () => {
         renderItem={({ item }) => <CartItem item={item} />}
       />
       <View style={styles.confirmContainer}>
-        <Pressable onPress={() => triggerPostOrder(cart)}>
+        <Pressable onPress={() => triggerPostOrder({order:cart, localId})}>
           <Text style={styles.text}>Confirmar</Text>
         </Pressable>
         <Text style={styles.text}>Total: $ {total} </Text>

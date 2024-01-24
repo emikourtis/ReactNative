@@ -1,12 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../Global/colors'
-
+import { AntDesign } from '@expo/vector-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../features/auth/authSlice';
+import { deleteAllSession } from '../database';
 
 const Header = ({title, navigation, route}) => {
+  const dispatch = useDispatch()
+  const localId = useSelector(state=>state.auth.value.localId)
+  const onLogout = ()=>{
+      deleteAllSession().then(result=>console.log(result))
+      dispatch(clearUser)
+  }
 
   return (
     <View style={styles.container} >
       <Text style={styles.text} >{title} </Text>
+      {localId && <Pressable onPress={onLogout} style={styles.logoutIcon}>
+        <AntDesign name="logout" size={24} color="black" />
+      </Pressable>}
      
     </View>
   )
@@ -33,5 +45,9 @@ const styles = StyleSheet.create({
   },
   btn:{
     margin:30
+  },
+  logoutIcon:{
+    position:"absolute",
+    right:10
   }
 })

@@ -3,13 +3,12 @@ import {Feather} from '@expo/vector-icons'
 import { colors } from '../Global/colors'
 
 const OrderItem = ({ order }) => {
-    const total = order.items
-        .reduce((acc, product)=>acc + (product.price * product.quantity),0)
+    
     return (
         <View style={styles.container} >
             <View style={styles.containerCarts}>
                 <Text style={styles.text}>Date: {new Date(order.createdAd).toLocaleString()}</Text>
-                <Text style={styles.text}>Total: ${total} </Text>
+                <Text style={styles.text}>Total: ${order.total} </Text>
                 <Feather name='search' size={25} color="white" />
             </View>
             
