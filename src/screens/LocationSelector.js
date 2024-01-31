@@ -58,7 +58,7 @@ const LocationSelector = ({navigation}) => {
     
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>${address}</Text>
+      <Text style={styles.text}>{address}</Text>
       <MapPreview latitude={location.latitude} longitude={location.longitude}/>
       <AddButton title="Confirm location" onPress={onConfirmDirection}/>
     </View>

@@ -10,7 +10,7 @@ const Header = ({title, navigation, route}) => {
   const localId = useSelector(state=>state.auth.value.localId)
   const onLogout = ()=>{
       deleteAllSession().then(result=>console.log(result))
-      dispatch(clearUser)
+      dispatch(clearUser())
   }
 
   return (

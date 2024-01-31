@@ -3,6 +3,7 @@ import TabNavigator from './TabNavigator'
 import AuthStack from './AuthStack'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchSession } from '../database'
+import { useEffect } from 'react'
 
 const MainNavigator = () => {
     const dispatch = useDispatch()
@@ -20,7 +21,7 @@ const MainNavigator = () => {
           console.log(error.message)
         }
       })()
-    }, [third])
+    }, [])
     
     
   return (

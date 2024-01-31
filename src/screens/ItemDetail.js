@@ -3,20 +3,31 @@ import { colors } from '../Global/colors'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
+import { useState } from 'react'
+import AddToCartModal from '../components/AddToCartModal'
 
 const ItemDetail = ({route}) => {
   const dispatch = useDispatch()
   const product = useSelector((state)=> state.shop.value.productSelected)
   const images = product.images ? product.images : []
 
+  const [isModalVisible, setModalVisible] = useState(false);
 
+  const handleAddToCart = () => {
+    dispatch(addItem(product));
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.content} >
           <Image
             style={styles.image}
-            source={{uri:images[2]}}
+            source={{uri:images[0]}}
             resizeMode='cover'
           />
           <View style={styles.containerText}>
@@ -25,11 +36,12 @@ const ItemDetail = ({route}) => {
           </View>
           <View style={styles.containerPrice}>
             <Text style={styles.price}>$ {product.price}</Text>
-            <Pressable style={styles.buyNow} onPress={()=>dispatch(addItem(product))}>
+            <Pressable style={styles.buyNow} onPress={handleAddToCart}>
               <Text style={styles.buyNowText}>Carrito</Text>
             </Pressable>
           </View>
         </View>
+        <AddToCartModal isVisible={isModalVisible} closeModal={closeModal} />
     </View>
   )
 }

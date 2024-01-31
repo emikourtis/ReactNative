@@ -32,6 +32,7 @@ const Login = ({ navigation }) => {
   }
   return (
     <View style={styles.main}>
+      <Text style={styles.FirstTitle}>Ropa usada como nueva</Text>
       <View style={styles.container}>
         <Text style={styles.title} >Login to start</Text>
         <InputForm
@@ -64,9 +65,14 @@ export default Login
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  FirstTitle:{
+    paddingBottom:30,
+    fontFamily:"Josefin",
+    fontSize:50,
+    paddingTop:20
   },
   container: {
     width: "90%",

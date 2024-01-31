@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import OrderItem from '../components/OrderItem'
 import { useGetOrdersQuery } from '../app/services/shopServices'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Orders = () => {
   const {data, isSuccess, isError, error,isLoading} = useGetOrdersQuery(localId)

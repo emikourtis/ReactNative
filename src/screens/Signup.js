@@ -60,6 +60,7 @@ const Signup = ({navigation}) => {
 
   return (
     <View style={styles.main}>
+      <Text style={styles.FirstTitle}>Ropa usada como nueva</Text>
       <View style={styles.container}>
           <Text style={styles.title} >Sign up</Text>
           <InputForm
@@ -101,9 +102,14 @@ export default  Signup
 
 const styles = StyleSheet.create({
     main:{
-      flex:1,
       justifyContent:"center",
       alignItems:"center"
+    },
+    FirstTitle:{
+      paddingBottom:30,
+      fontFamily:"Josefin",
+      fontSize:50,
+      paddingTop:20
     },
     container:{
       width:"90%",
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
-      paddingVertical:20
+      paddingVertical:10
     },
     title:{
       fontSize:22,
