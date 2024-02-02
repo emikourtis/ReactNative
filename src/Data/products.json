@@ -223,5 +223,95 @@
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_822049-MLA73156783848_122023-O.webp"
     ]
+  },
+  {
+    "id": 15,
+    "title": "Cafetera Nespresso",
+    "description": "Cafetera Nespresso Essenza Mini A3nc30 Automática Negra Para Cápsulas Monodosis 220v + Aeroccino",
+    "price": 100900,
+    "discountPercentage": 16,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "Nespresso",
+    "category": "Bazar",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_611157-MLA46707098415_072021-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_611157-MLA46707098415_072021-O.webp"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Buzo Adidas",
+    "description": "Buzo Essentials Kids adidas Sport 78",
+    "price": 11900,
+    "discountPercentage": 26,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "Adidas",
+    "category": "Liquidacion",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_623854-MLA52868635191_122022-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_623854-MLA52868635191_122022-O.webp"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Bandolera Mujer",
+    "description": "Bandolera Mujer Porta Celular Mini Bag Morral Tapa Cierre",
+    "price": 9900,
+    "discountPercentage": 20,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "Forever Young",
+    "category": "Liquidacion",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_829731-MLA69838922108_062023-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_829731-MLA69838922108_062023-O.webp"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Mochila Jansport",
+    "description": "Mochilas Jansport Originales Superbreak Urbanas Unisex",
+    "price": 15900,
+    "discountPercentage": 18,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "Jansport",
+    "category": "Liquidacion",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_836346-MLA53384353992_012023-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_836346-MLA53384353992_012023-O.webp"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Bolso matero",
+    "description": "Bolso Matero Mochila El Viejo Chaman Cusco Chawar Onix",
+    "price": 18900,
+    "discountPercentage": 19,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "El viejo chaman",
+    "category": "Liquidacion",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_774004-MLA72669737363_112023-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_774004-MLA72669737363_112023-O.webp"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Mochila bolso matero",
+    "description": "Mochila Bolso Matero Porta Termos 1l Notebook 13 Andes Madu",
+    "price": 17800,
+    "discountPercentage": 16,
+    "rating": 4.74,
+    "stock": 2,
+    "brand": "Madu",
+    "category": "Liquidacion",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_983484-MLA72981001517_112023-O.webp",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_983484-MLA72981001517_112023-O.webp"
+    ]
   }
 ]

@@ -27,10 +27,15 @@ export const shopApi = createApi({
     }),
     getOrders : builder.query({
       query: (localId) => `orders/${localId}.json`,
-      transformResponse:(response)=>{
-        if(!response) return []
-        const data = Object.keys(response).map({id:key,...key=>response[key]})
-        return data
+      transformResponse: (response) => {
+        if (!response) return [];
+        const data = Object.keys(response).map((key) => {
+          const order = response[key];
+          const items = order.items || [];
+          const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+          return { id: key, ...order, total, items };
+        });
+        return data;
       },
       providesTags:["order"]
   }),
