@@ -134,5 +134,12 @@ const styles = StyleSheet.create({
       fontSize:14,
       fontFamily:"Josefin",
       color:"blue"
+    },
+    error: {
+      fontSize: 16,
+      color: 'red',
+      fontFamily: 'Josefin',
+      fontStyle: 'italic',
+      marginLeft: 20,
     }
 })

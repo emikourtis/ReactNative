@@ -1,6 +1,7 @@
 import { Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { googleApi } from '../firebase/googleApi'
+import MapView from 'react-native-maps'
 
 const MapPreview = ({latitude, longitude}) => {
     const mapPreviewURL = `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}
@@ -11,7 +12,7 @@ const MapPreview = ({latitude, longitude}) => {
     &markers=color:red%7Clabel:C%7C${latitude},${longitude}
     &key=${googleApi.mapStatic}`
   return (
-    <Image style={styles.image} source={latitude? {uri:mapPreviewURL} : require("../../assets/map.jpg")}/>
+    <Image style={styles.image} source={latitude? {uri:<MapView/>} : require("../../assets/map.jpg")}/>
   )
 }
 

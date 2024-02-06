@@ -11,53 +11,98 @@ import { insertSession } from '../database'
 
 
 const Login = ({ navigation }) => {
-  const dispatch = useDispatch()
-  const [triggerLogin, { data, isError, isSuccess, error, isLoading }] = useLoginMutation()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const dispatch = useDispatch();
+  const [triggerLogin, { data, isError, isSuccess, error, isLoading }] = useLoginMutation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(setUser(data))
+      dispatch(setUser(data));
       insertSession(data)
-        .then((result)=>console.log(result))
-        .catch((err)=>console.log(err))
+        .then((result) => console.log(result))
+        .catch((err) => console.log(err));
     }
-    if (isError) console.log(error)
-  }, [data, isError, isSuccess])
-
+    if (isError) console.log(error);
+  }, [data, isError, isSuccess]);
 
   const onSubmit = () => {
-    triggerLogin({ email, password })
-  }
+   
+    setEmailError("");
+    setPasswordError("");
+
+    try {
+      
+      if (!email) {
+        throw new Error("El correo electrónico es obligatorio.");
+      }
+
+      
+      if (!password) {
+        throw new Error("La contraseña es obligatoria.");
+      }
+
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error("El formato del correo electrónico no es válido.");
+      }
+
+      
+      
+      triggerLogin({ email, password });
+    } catch (error) {
+      
+      switch (error.message) {
+        case "El correo electrónico es obligatorio.":
+          setEmailError(error.message);
+          break;
+        case "La contraseña es obligatoria.":
+          setPasswordError(error.message);
+          break;
+        case "El formato del correo electrónico no es válido.":
+          setEmailError(error.message);
+          break;
+        
+        default:
+          console.error("Error de validación no manejado:", error.message);
+          break;
+      }
+    }
+  };
+
   return (
     <View style={styles.main}>
       <Text style={styles.FirstTitle}>Ropa usada como nueva</Text>
       <View style={styles.container}>
-        <Text style={styles.title} >Login to start</Text>
+        <Text style={styles.title}>Login to start</Text>
         <InputForm
           label="Email"
           value={email}
           onChangeText={(t) => setEmail(t)}
           isSecure={false}
-          error=""
+          error={emailError}
         />
         <InputForm
           label="Password"
           value={password}
           onChangeText={(t) => setPassword(t)}
           isSecure={true}
-          error=""
+          error={passwordError}
         />
         <SubmitButton onPress={onSubmit} title="Send" />
         <Text style={styles.sub}>Not have an account?</Text>
-        <Pressable onPress={() => navigation.navigate("Signup")} >
+        <Pressable onPress={() => navigation.navigate("Signup")}>
           <Text style={styles.subLink}>Sign up</Text>
         </Pressable>
       </View>
     </View>
-  )
-}
+  );
+};
+
+
 
 
 export default Login
