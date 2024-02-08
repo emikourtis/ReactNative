@@ -75,7 +75,7 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.main}>
-      <Text style={styles.FirstTitle}>Ropa usada como nueva</Text>
+      <Text style={styles.FirstTitle}>BestClothes</Text>
       <View style={styles.container}>
         <Text style={styles.title}>Login to start</Text>
         <InputForm
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   FirstTitle:{
     paddingBottom:30,
-    fontFamily:"Josefin",
+    fontFamily:"Honk",
     fontSize:50,
     paddingTop:20
   },

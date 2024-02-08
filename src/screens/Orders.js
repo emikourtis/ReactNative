@@ -34,10 +34,15 @@ const Orders = () => {
       data={data}
       keyExtractor={item => item.id}
       renderItem={({ item }) => <OrderItem order={item} />}
+      style={styles.FlatList}
     />
   );
 };
 
 export default Orders;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  FlatList:{
+    bottom:110
+  }
+});

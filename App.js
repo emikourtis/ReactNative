@@ -15,7 +15,8 @@ const App = () => {
 
   const [fontLoaded] = useFonts({
     Josefin: require("./assets/Fonts/JosefinSans-Bold.ttf"),
-    Lobster: require("./assets/Fonts/Lobster-Regular.ttf")
+    Lobster: require("./assets/Fonts/Lobster-Regular.ttf"),
+    Honk: require("./assets/Fonts/Honk-Regular.ttf")
   })
 
   if (!fontLoaded) return null
@@ -23,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <StatusBar
+      <StatusBar style="auto" backgroundColor="#fff"
       />
       <Provider store={store}>
         <MainNavigator />
