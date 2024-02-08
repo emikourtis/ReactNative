@@ -5,15 +5,14 @@
   <img src="https://img.shields.io/badge/Expo-Location-yellow.svg" alt="Expo Location">
 </p>
 
-# E-Commerce App - React Native
+# 🛍️ E-Commerce App - React Native
 
 Una aplicación de comercio electrónico desarrollada con React Native que ofrece una experiencia de compra completa y fácil de usar.
 
 ## Funcionalidades Principales
 
 ### Pantalla de Cuenta
-- **Acceso seguro:** Solo los usuarios autenticados pueden acceder a la pantalla de perfil y realizar compras.
-
+- **Acceso seguro:** Solo los usuarios autenticados pueden acceder a la  pantalla de perfil y realizar compras.
 
 ### Autenticación con Firebase
 - Utiliza el sistema de autenticación de Firebase para gestionar el acceso de usuarios.
@@ -32,6 +31,7 @@ Una aplicación de comercio electrónico desarrollada con React Native que ofrec
 - Proporciona una descripción detallada del producto.
 - Muestra el precio y foto del producto.
 - Permite agregar el producto al carrito.
+
 
 ### Navegación Inferior
 ```javascript
