@@ -58,8 +58,10 @@ const LocationSelector = ({navigation}) => {
     
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{address}</Text>
-      <MapPreview latitude={location.latitude} longitude={location.longitude}/>
+      <Text style={styles.text}>{console.log(location)}</Text>
+      <Image style={styles.image} source={require("../../assets/map.jpg")}/>
+      <Text>longitude:{location.longitude} </Text>
+      <Text>latitude:{location.latitude} </Text>
       <AddButton title="Confirm location" onPress={onConfirmDirection}/>
     </View>
   )
@@ -76,5 +78,9 @@ const styles = StyleSheet.create({
     text:{
         fontSize:16
     },
+    image:{
+        width:300,
+        height:300
+    }
    
 })

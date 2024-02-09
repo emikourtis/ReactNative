@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         width:"80%",
         height:80,
         marginHorizontal:"10%",
-        backgroundColor: colors.crema,
+        backgroundColor: colors.lavender,
         margin: 10,
         padding: 10,
         justifyContent:"space-around",

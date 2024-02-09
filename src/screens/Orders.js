@@ -43,6 +43,8 @@ export default Orders;
 
 const styles = StyleSheet.create({
   FlatList:{
-    bottom:110
+    paddingbottom:110,
+    marginTop:100,
+    bottom:100
   }
 });

@@ -32,13 +32,13 @@ export default Categories
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    backgroundColor:colors.lavender,
+    backgroundColor:"white",
     padding:20,
     alignContent:"center",
     paddingBottom:20
     },
     errorText: {
-      color: colors.red, // Cambiado a red
+      color: colors.red, 
       fontSize: 16,
       textAlign: 'center',
     },

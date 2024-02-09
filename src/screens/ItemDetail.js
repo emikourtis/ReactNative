@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: "start",
     alignItems: "center",
     borderRadius: 10,
-    backgroundColor: colors.pink,
+    backgroundColor: colors.lavender,
     paddingBottom: 120
 
   },
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   buyNow: {
     width: "auto",
-    backgroundColor: colors.green,
+    backgroundColor: colors.coral,
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderRadius: 15,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     shadowOffset: ""
   },
   buyNowText: {
-    color: colors.blue,
+    color: colors.lavender,
     fontSize: 35,
     fontFamily: "Lobster"
   }

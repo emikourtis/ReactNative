@@ -53,7 +53,7 @@ const Cart = () => {
       />
       <View style={styles.confirmContainer}>
         <Pressable style={styles.btn} onPress={handleConfirmOrder}>
-          <Text style={styles.text}>Confirmar</Text>
+          <Text style={styles.text}>Confirm</Text>
         </Pressable>
         <Text style={styles.text}>Total: $ {total} </Text>
       </View>
@@ -66,9 +66,9 @@ const Cart = () => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalText}>¡Pedido confirmado con éxito!</Text>
+            <Text style={styles.modalText}>¡Order successfully confirmed!</Text>
             <Pressable style={styles.modalButton} onPress={closeModal}>
-              <Text style={styles.modalButtonText}>Cerrar</Text>
+              <Text style={styles.modalButtonText}>Close</Text>
             </Pressable>
           </View>
         </View>
@@ -82,8 +82,9 @@ export default Cart;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 130,
-    margin: 20,
+    paddingBottom: 130,
+    padding: 20,
+    backgroundColor:colors.lavender
   },
   confirmContainer: {
     padding: 15,
@@ -94,15 +95,18 @@ const styles = StyleSheet.create({
   text: {
     color: 'black',
     fontFamily: 'Josefin',
-    fontSize: 18,
+    fontSize: 28,
+    alignSelf:"center",
+    paddingTop:10,
+    
   },
   btn: {
-    backgroundColor: colors.green,
-    padding: 15,
+    backgroundColor: colors.coral,
+    padding: 10,
     borderRadius: 20,
     margin: 20,
-    alignContent: 'center',
-    alignItems: 'center',
+    alignSelf:"center",
+    
   },
   modalContainer: {
     flex: 1,

@@ -2,6 +2,7 @@ import { StyleSheet, View,Image, Text } from 'react-native'
 import AddButton from '../components/AddButton'
 import { useGetProfileImageQuery, useGetUserLocationQuery } from '../app/services/shopServices'
 import { useSelector } from 'react-redux'
+import { colors } from '../Global/colors'
 
 const MyProfile = ({navigation}) => {
     const localId = useSelector(state => state.auth.value.localId)
@@ -18,7 +19,7 @@ const MyProfile = ({navigation}) => {
         
         <AddButton title={"Add profile picture"} onPress={()=> navigation.navigate("ImageSelector")}/>
         <AddButton title={location? "Change ubication" : "Add ubication"} onPress={()=> navigation.navigate("LocationSelector")}/>
-        <Text>{data ? data.description : ''}</Text>
+        
     </View>
   )
 }
@@ -31,7 +32,8 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         alignItems:"center",
-        marginTop:20
+        paddingTop:20,
+        backgroundColor:colors.lavender
     },
     image:{
         width:200,

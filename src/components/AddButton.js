@@ -16,14 +16,16 @@ export default AddButton
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:colors.green,
+        backgroundColor:colors.coral,
         width:"70%",
         paddingVertical:8,
-        margin:10
+        margin:10,
+        borderRadius:30
     },
     text:{
         color:"white",
         textAlign:"center",
-        fontSize:18
+        fontSize:18,
+        
     }
 })

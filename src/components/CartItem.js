@@ -17,7 +17,7 @@ const CartItem = ({ item }) => {
       <View style={styles.textContainer}>
         <Text style={styles.text1}>{item.title} </Text>
         <Text style={styles.text2}>{item.brand} </Text>
-        <Text style={styles.text1}>$ {item.price} Cantidad: {item.quantity} </Text>
+        <Text style={styles.text1}>$ {item.price} Quantity: {item.quantity} </Text>
       </View>
       <TouchableOpacity onPress={handleRemoveItem}>
         <AntDesign name='delete' size={25} color={colors.black} />
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   text1: {
     fontSize: 17,
     fontFamily: 'Josefin',
+    width:"90%"
   },
   text2: {
     fontSize: 14,

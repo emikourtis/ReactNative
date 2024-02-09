@@ -55,17 +55,19 @@ const styles = StyleSheet.create({
     container: {
         width: "90%",
         flexDirection: "row",
-        gap: 50,
+        gap: 10,
         justifyContent: "space-between",
-        margin: 20,
+        margin: 10,
         padding: 10,
+        
     },
     containerCarts: {
         backgroundColor: colors.blue,
         width: "100%",
-        padding: 15,
+        padding: 13,
         gap: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        
     },
     text: {
         fontFamily: "Josefin",
