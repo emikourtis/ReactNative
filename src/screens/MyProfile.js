@@ -18,7 +18,7 @@ const MyProfile = ({navigation}) => {
         />
         
         <AddButton title={"Add profile picture"} onPress={()=> navigation.navigate("ImageSelector")}/>
-        <AddButton title={location? "Change ubication" : "Add ubication"} onPress={()=> navigation.navigate("LocationSelector")}/>
+        
         
     </View>
   )

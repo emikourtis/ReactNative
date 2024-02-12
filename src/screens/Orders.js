@@ -19,14 +19,14 @@ const Orders = () => {
     if (isError && error) setErrorMessage(error.message || 'Error al obtener órdenes');
   }, [isSuccess, isError, error, data]);
 
-  if (isLoading) return <View><Text>Cargando...</Text></View>;
+  if (isLoading) return <View><Text style={styles.txt}>Cargando...</Text></View>;
 
   if (isError) {
     return <View><Text>{errorMessage}</Text></View>;
   }
 
   if (!info) {
-    return <View><Text>No tienes órdenes</Text></View>;
+    return <View><Text style={styles.txt} >No tienes órdenes</Text></View>;
   }
 
   return (
@@ -46,5 +46,11 @@ const styles = StyleSheet.create({
     paddingbottom:110,
     marginTop:100,
     bottom:100
+  },
+  txt:{
+    alignSelf:"center",
+    paddingTop:40,
+    fontFamily:"Josefin",
+    fontSize:25
   }
 });

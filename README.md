@@ -78,10 +78,10 @@ const TabNavigator = () => {
 
 ## Pestañas de Navegación
 
-1. **Productos:** Categorías y productos (stack principal).
-2. **Carrito:** Detalles del carrito de compras con resumen y botón para finalizar la orden.
-3. **Órdenes:** Historial de órdenes realizadas.
-4. **Perfil:** Información del usuario, ubicación y carga de imagen de perfil.
+1. **Shop:** Categorías y productos (stack principal).
+2. **Cart:** Detalles del carrito de compras con resumen y botón para finalizar la orden.
+3. **Orders:** Historial de órdenes realizadas.
+4. **Profile:** carga de imagen de perfil.
 
 ## Tecnologías Utilizadas
 
