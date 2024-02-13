@@ -88,7 +88,6 @@ const TabNavigator = () => {
 - **Firebase Authentication:** Implementa el sistema de autenticación de Firebase para gestionar la seguridad de la aplicación.
 - **React Native Navigation Stack:** Gestiona la navegación entre pantallas.
 - **React Native Navigation Bottom Tab:** Facilita la navegación entre pestañas.
-- **Expo-Location:** Permite acceder y gestionar la ubicación del usuario.
 - **Expo-Image-Picker:** Simplifica la carga de imágenes de perfil.
 - **Redux:** Centraliza y gestiona el estado de la aplicación.
 - **RTK Query y Firebase:** Realiza operaciones de lectura/escritura en la base de datos.
